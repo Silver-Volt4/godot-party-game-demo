@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcebwl62r3vfl"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_avibh"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_avibh")
+metadata/_edit_lock_ = true
+
+[node name="QRCodeImage" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 118.0
+offset_top = 322.0
+offset_right = 495.0
+offset_bottom = 699.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+autoplay = true

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://nfulne6v2g0s"]
+
+[ext_resource type="FontFile" uid="uid://dqb6hm7nhe3y" path="res://assets/fonts/Comfortaa-Bold.ttf" id="1_stib4"]
+
+[resource]
+default_font = ExtResource("1_stib4")
+default_font_size = 48

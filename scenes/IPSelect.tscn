@@ -1,0 +1,96 @@
+[gd_scene load_steps=3 format=3 uid="uid://1itjfj618r32"]
+
+[ext_resource type="Theme" uid="uid://nfulne6v2g0s" path="res://Theme.tres" id="1_1mrm4"]
+[ext_resource type="Script" path="res://scenes/IPSelect.gd" id="1_lw487"]
+
+[node name="IPSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_1mrm4")
+script = ExtResource("1_lw487")
+
+[node name="IPScrollList" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 95.0
+offset_bottom = -95.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="IPList" type="VBoxContainer" parent="IPScrollList"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="IP" type="Button" parent="IPScrollList/IPList"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="IPDetails" type="HBoxContainer" parent="IPScrollList/IPList/IP"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="Label" parent="IPScrollList/IPList/IP/IPDetails"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Name
+"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Address" type="Label" parent="IPScrollList/IPList/IP/IPDetails"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "aaaaa"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -411.5
+offset_right = 411.5
+offset_bottom = 100.0
+grow_horizontal = 2
+text = "Select the Local IP address of this device:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Address" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -75.0
+offset_right = 1737.0
+grow_vertical = 0
+placeholder_text = "Custom address to use (like ngrok, noip, your domain...)"
+
+[node name="SelectCustomAddress" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -183.0
+offset_top = -75.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Select"
+
+[connection signal="pressed" from="SelectCustomAddress" to="." method="_on_custom_address_pressed"]

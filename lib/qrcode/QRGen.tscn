@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf38hntyjeegs"]
+
+[sub_resource type="GDScript" id="GDScript_i3e5n"]
+script/source = "extends QR
+
+func get_image(text: String) -> Image:
+	var content = generate(text)
+	var dimensions = int(sqrt(len(content)))
+	var image = Image.create(dimensions + 2, dimensions + 2, false, Image.FORMAT_RGB8)
+	image.fill(Color.WHITE)
+	var i = 0;
+	for black in content:
+		if black:
+			var x = i % dimensions + 1
+			var y = i / dimensions + 1
+			image.fill_rect(Rect2i(x, y, 1, 1), Color.BLACK)
+		i += 1
+	
+	return image
+"
+
+[node name="QR" type="QR"]
+script = SubResource("GDScript_i3e5n")
